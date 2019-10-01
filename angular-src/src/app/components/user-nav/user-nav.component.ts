@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-user-nav',
-  templateUrl: './user-nav.component.html',
-  styleUrls: ['./user-nav.component.css']
+  selector: "app-user-nav",
+  templateUrl: "./user-nav.component.html",
+  styleUrls: ["./user-nav.component.css"]
 })
 export class UserNavComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  addActive = e => {
+    console.log(e.target);
+  };
 
-  ngOnInit() {
-  }
+  getLocation = () => {
+    return false;
+  };
 
+  setLocation = () => {
+    console.log();
+  };
+
+  ngOnInit() {}
 }

@@ -5,7 +5,6 @@
     >
       <h4 class="ml-4 mt-1 text-light">
         <span class="rounded pl-2 pr-2 pb-1 bg-dark">Customer Name</span>
-
         <svg
           version="1.1"
           id="Capa_1"
@@ -74,14 +73,27 @@
     <div class="row">
       <div class="col mt-2">
         <ul class="nav resize-nav">
-          <li class="nav-item border-bottom border-primary pb-3">
-            <a class="nav-link text-dark">Home</a>
+          <li
+            routerLinkActive="nav-item border-bottom border-primary pb-3"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-dark" routerLink="/home">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary">Products</a>
+          <li
+            routerLinkActive="nav-item border-bottom border-primary pb-3"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-secondary" routerLink="/products"
+              >Products</a
+            >
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary">Checkout</a>
+          <li
+            routerLinkActive="nav-item border-bottom border-primary pb-3"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-secondary" routerLink="/checkout"
+              >Checkout</a
+            >
           </li>
         </ul>
       </div>

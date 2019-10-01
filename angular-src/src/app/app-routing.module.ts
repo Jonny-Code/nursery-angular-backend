@@ -1,8 +1,14 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { UserNavComponent } from "./components/user-nav/user-nav.component";
+import { HomeComponent } from "./components/home/home.component";
+import { ProductsComponent } from "./components/products/products.component";
+import { CheckoutComponent } from "./components/checkout/checkout.component";
 
-const routes: Routes = [{ path: "profile", component: UserNavComponent }];
+const routes: Routes = [
+  { path: "home", component: HomeComponent },
+  { path: "products", component: ProductsComponent },
+  { path: "checkout", component: CheckoutComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
