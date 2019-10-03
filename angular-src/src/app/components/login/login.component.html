@@ -50,24 +50,30 @@
   <h3 class="text-center pb-2">Log into account</h3>
   <div class="row justify-content-center ml-5 mr-5">
     <div class="col-6 ml-5 mr-5">
-      <input
-        class="form-control form-control-lg text-center mb-3"
-        type="text"
-        placeholder="Username"
-        required
-        autofocus
-      />
+      <form (submit)="onLoginSubmit()">
+        <input
+          class="form-control form-control-lg text-center mb-3"
+          type="text"
+          placeholder="Username"
+          [(ngModel)]="username"
+          name="username"
+          autofocus
+        />
 
-      <input
-        class="form-control form-control-lg text-center"
-        type="text"
-        placeholder="Password"
-        required
-      />
+        <input
+          class="form-control form-control-lg text-center"
+          type="password"
+          placeholder="Password"
+          [(ngModel)]="password"
+          name="password"
+        />
 
-      <button class="btn btn-primary btn-lg btn-block rounded mt-3">
-        Sign In
-      </button>
+        <input
+          type="submit"
+          class="btn btn-primary btn-lg btn-block rounded mt-3"
+          value="Sign In"
+        />
+      </form>
 
       <div class="row mt-3">
         <div class="col text-center">

@@ -15,4 +15,12 @@ export class AuthService {
       headers: headers
     });
   };
+
+  authenticateUser = (user: any) => {
+    let headers = new HttpHeaders();
+    headers.append("Content-Type", "application/json");
+    return this.http.post("http://localhost:5000/users/authenticate", user, {
+      headers: headers
+    });
+  };
 }

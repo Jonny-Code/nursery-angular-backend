@@ -20,6 +20,8 @@ mongoose.connection.on("error", err => {
   console.log(`Database connection error ${err}`);
 });
 
+let db = mongoose.connection;
+
 const app = express();
 
 // cors middleware
@@ -40,6 +42,7 @@ require("./config/passport")(passport);
 // temp home route
 app.get("/", (req, res) => {
   res.send("Home route");
+  console.log(db);
 });
 
 // user route
