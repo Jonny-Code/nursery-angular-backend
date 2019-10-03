@@ -38,13 +38,13 @@
     </svg>
   </div>
   <div class="col p-0 mt-2 text-left">
-    <h5 class="text-secondary">
+    <h5 class="text-secondary mt-1">
       Wholesale Nursery
     </h5>
   </div>
 
-  <div class="col p-0 mt-2 mr-4 text-right">
-    <div class="dropdown">
+  <div class="col p-0 mt-2 mb-2 mr-4 text-right">
+    <div *ngIf="isLoggedIn" class="dropdown">
       <button
         class="btn btn-light dropdown-toggle pt-0 pb-0 pr-0 pl-2"
         type="button"
@@ -57,8 +57,18 @@
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item">My Account</a>
-        <a class="dropdown-item">Log out</a>
+        <a class="dropdown-item" routerLink="/login" (click)="onLogoutClick()"
+          >Log out</a
+        >
       </div>
     </div>
+    <ul *ngIf="!isLoggedIn" class="nav float-right">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Log in</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/register">Register</a>
+      </li>
+    </ul>
   </div>
 </nav>

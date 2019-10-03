@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: "app-user-nav",
@@ -6,7 +7,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./user-nav.component.css"]
 })
 export class UserNavComponent implements OnInit {
-  constructor() {}
+  isLoggedIn: boolean;
+  constructor(private authService: AuthService) {}
 
   addActive = e => {
     console.log(e.target);
@@ -20,5 +22,9 @@ export class UserNavComponent implements OnInit {
     console.log();
   };
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.authService.loggedIn()) {
+      this.isLoggedIn = true;
+    } else this.isLoggedIn = false;
+  }
 }

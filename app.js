@@ -41,12 +41,15 @@ require("./config/passport")(passport);
 
 // temp home route
 app.get("/", (req, res) => {
-  res.send("Home route");
-  console.log(db);
+  res.send("Not a valid endpoint");
 });
 
 // user route
 app.use("/users", users);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
 const PORT = process.env.PORT || 5000;
 

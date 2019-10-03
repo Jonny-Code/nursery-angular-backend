@@ -14,6 +14,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { ValidateService } from "./services/validate.service";
 import { AuthService } from "./services/auth.service";
+import { AuthGuard } from "./guards/auth.guard";
 import {
   FlashMessagesModule,
   FlashMessagesService
@@ -38,7 +39,7 @@ import {
     FlashMessagesModule,
     HttpClientModule
   ],
-  providers: [ValidateService, FlashMessagesService, AuthService],
+  providers: [ValidateService, FlashMessagesService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
