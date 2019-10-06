@@ -46,24 +46,17 @@ export class RegisterComponent implements OnInit {
       return false;
     }
 
-    // this.authService.registerUser(user).subscribe((data: any) => {
-    //   if (data.success) {
-    //     this.flashMessagesService.show(
-    //       "Successfully registered. You can now login",
-    //       {
-    //         cssClass: "alert-success text-center"
-    //       }
-    //     );
-    //     this.router.navigate(["/login"]);
-    //   } else {
-    //     this.flashMessagesService.show(
-    //       "Registration unsuccessful. Try again.",
-    //       {
-    //         cssClass: "alert-danger text-center"
-    //       }
-    //     );
-    //     this.router.navigate(["/register"]);
-    //   }
-    // });
+    this.authService.registerUser(user).subscribe((data: any) => {
+      if (data.success) {
+        this.flashMessagesService.show(
+          "Successfully registered, you can now log in.",
+          {
+            cssClass: "alert-success text-center h4"
+          }
+        );
+      } else {
+        this.router.navigate(["/register"]);
+      }
+    });
   };
 }

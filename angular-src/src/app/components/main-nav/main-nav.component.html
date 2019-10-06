@@ -44,7 +44,7 @@
   </div>
 
   <div class="col p-0 mt-2 mb-2 mr-4 text-right">
-    <div *ngIf="isLoggedIn" class="dropdown">
+    <div *ngIf="authService.loggedIn()" class="dropdown">
       <button
         class="btn btn-light dropdown-toggle pt-0 pb-0 pr-0 pl-2"
         type="button"
@@ -53,7 +53,9 @@
         aria-haspopup="true"
         aria-expanded="false"
       >
-        <small><strong>customeremail123@gmail.com</strong></small>
+        <small
+          ><strong>{{ email }}</strong></small
+        >
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item">My Account</a>
@@ -62,7 +64,7 @@
         >
       </div>
     </div>
-    <ul *ngIf="!isLoggedIn" class="nav float-right">
+    <ul *ngIf="!authService.loggedIn()" class="nav float-right">
       <li class="nav-item">
         <a class="nav-link" routerLink="/login">Log in</a>
       </li>

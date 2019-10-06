@@ -48,6 +48,10 @@ export class AuthService {
     this.user = user;
   };
 
+  getUserData = () => {
+    return JSON.parse(localStorage.getItem("user"));
+  };
+
   loggedIn = () => {
     return tokenNotExpired("id_token");
   };

@@ -8,6 +8,7 @@ import { RegisterComponent } from "./components/register/register.component";
 import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
+  { path: "", component: LoginComponent },
   { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
   { path: "products", component: ProductsComponent, canActivate: [AuthGuard] },
   { path: "checkout", component: CheckoutComponent, canActivate: [AuthGuard] },

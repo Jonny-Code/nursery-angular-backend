@@ -9,26 +9,21 @@ import { FlashMessagesService } from "angular2-flash-messages";
   styleUrls: ["./main-nav.component.css"]
 })
 export class MainNavComponent implements OnInit {
-  isLoggedIn: boolean;
+  email: string;
 
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private flashMessageService: FlashMessagesService
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    if (this.authService.loggedIn()) {
-      this.isLoggedIn = true;
-    } else this.isLoggedIn = false;
+    if (localStorage.getItem("user") != null) {
+      this.authService
+        .getHome()
+        .subscribe((obs: any) => (this.email = obs.user.email));
+    }
   }
 
   onLogoutClick = () => {
-    this.authService.logout();
-    this.flashMessageService.show("you are logged out", {
-      cssClass: "alert-success text-center"
-    });
     this.router.navigate(["login"]);
+    this.authService.logout();
     return false;
   };
 }

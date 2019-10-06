@@ -20,8 +20,6 @@ mongoose.connection.on("error", err => {
   console.log(`Database connection error ${err}`);
 });
 
-let db = mongoose.connection;
-
 const app = express();
 
 // cors middleware
