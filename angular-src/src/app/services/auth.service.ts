@@ -41,6 +41,12 @@ export class AuthService {
     });
   };
 
+  getProducts = () => {
+    let headers = new HttpHeaders();
+    headers.append("Content-Type", "application/json");
+    return this.http.get("http://localhost:5000/products/all");
+  };
+
   storeUserData = (token: string, user: any) => {
     localStorage.setItem("id_token", token);
     localStorage.setItem("user", JSON.stringify(user));

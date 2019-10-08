@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const users = require("./routes/users");
+const products = require("./routes/products");
 const config = require("./config/db");
 
 // handle deprecation warnings
@@ -44,6 +45,7 @@ app.get("/", (req, res) => {
 
 // user route
 app.use("/users", users);
+app.use("/products", products);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));

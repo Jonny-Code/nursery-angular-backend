@@ -1,0 +1,7 @@
+.card-link {
+  cursor: pointer;
+}
+
+.card-body {
+  justify-content: space-evenly;
+}

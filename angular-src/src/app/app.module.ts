@@ -19,6 +19,7 @@ import {
   FlashMessagesModule,
   FlashMessagesService
 } from "angular2-flash-messages";
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {
     ProductsComponent,
     CheckoutComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
